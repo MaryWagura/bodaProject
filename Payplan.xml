@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "cellflash-1.3.dtd">
+<pages>
+<page> 
+Choose a payment plane below
+<a href="Daily.xml">Daily </a>
+<a href="Weekly.xml">Weekly</a>
+<a href="Monthly.xml">Monthly </a>
+
+</page>
+</pages>
