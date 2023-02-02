@@ -2,8 +2,11 @@
 <!DOCTYPE pages SYSTEM "cellflash-1.3.dtd">
 <pages>
 <page> 
-Pay Tax
-<a href="IDNumber.xml">Input your numberplate </a>
-
+Input 
+<form action="/tkl/ussd/IDNumber.xml" method="POST">
+<entry kind="digits" var="zip">
+<prompt>Number Plate</prompt>
+</entry>
+</form>
 </page>
 </pages>

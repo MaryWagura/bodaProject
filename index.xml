@@ -3,7 +3,7 @@
 <pages>
 <page> 
 Welcome to BodaBoda Tax Service
-<a href="Numberplate.xml">Pay Taxes </a>
+<a href="ussd/Numberplate.xml">Pay Taxes </a>
 <a href="Compliance.xml">Compliance Certiticate </a>
 </page>
 </pages>
