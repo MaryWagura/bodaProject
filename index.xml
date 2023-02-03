@@ -2,7 +2,7 @@
 <!DOCTYPE pages SYSTEM "cellflash-1.3.dtd">
 <pages>
 <page> 
-Welcome to BodaBoda Tax Service
+Welcome to BodaBoda Tax Service<br/>
 <a href="ussd/Numberplate.xml">Pay Taxes </a>
 <a href="Compliance.xml">Compliance Certiticate </a>
 </page>
