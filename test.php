@@ -21,7 +21,7 @@ for ($i = 0; $i < count($requestURIs); $i++) {
     }
 }
 
-if ($path == 'http://localhost/test.php') {
+if ($path == '') {
     $page = $path;
     echo $path;
     
