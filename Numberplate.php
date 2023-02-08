@@ -1,4 +1,5 @@
 <?php
+require('db.php');
 header('Content-Type: text/xml');
 
 $telkomHeader = '      

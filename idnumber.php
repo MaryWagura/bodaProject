@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: text/xml');
+require('db.php');
 
 $telkomHeader = '      
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -24,19 +25,32 @@ if(isset($_GET['numberplate']))
   }
 
 
-$page= '<page> 
+$result = $conn->query( "SELECT * FROM `ownerdetails` WHERE  `numberplate` = '$numberplate'" );
+$row= mysqli_fetch_array($result);
+//$num= $row[ 'numberplate' ];
+//echo $num;
+
+
+if (mysqli_num_rows($result) == 1) {
+    $page = '<page> 
 Input 
 <form action="/tkl/ussd/Payplan.php">
 <entry kind="digits" var="idnumber">
-<prompt>Your ID Number '.$numberplate.':</prompt>
+<prompt>Your ID Number ' . $numberplate . ':</prompt>
 </entry>
 </form>
 </page>';
+    echo $page;
+    $telkomFooter = '</pages>';
+    echo $telkomFooter;
+} else {
+    $page = '<page> 
+The numberplate does not exist.Please try again
+</page>';
 echo $page;
+
 $telkomFooter = '</pages>';
 echo $telkomFooter;
-
-
-
+}
 
 ?>
