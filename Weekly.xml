@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE pages SYSTEM "cellflash-1.3.dtd">
-<pages>
-<page> 
-Do you wish to pay with the current number?
-<a href="Pay.xml">Yes </a>
-<a href="newNumber.xml">No </a>
-</page>
-</pages>

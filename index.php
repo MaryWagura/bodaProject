@@ -15,41 +15,40 @@ $requestURIs = explode("/", $telkomRequest);
 $path = '';
 
 for ($i = 0; $i < count($requestURIs); $i++) {
-    if ($i == 3) {
-        $path = $requestURIs[3];
+    if ($i == 4) {
+        $path = $requestURIs[4];
     }
 }
 $page= '';
 if ($path == '') {
     $page = '<page> 
-Welcome to BodaBoda Tax Service<br/>
-<a href="ussd/Numberplate.xml">Pay Taxes </a>
-<a href="Compliance.xml">Compliance Certiticate </a>
+Welcome to BodaBoda Tax Services<br/>
+<a href="ussd/Numberplate.php">Pay Taxes</a><br/>
+<a href="Compliance.xml">Compliance Certiticate</a><br/>
 </page>';
 
    
-} else if ($path == 'Numberplate.xml') {
-    $page = '<page> 
-Input 
-<form action="/tkl/ussd/IDNumber.xml" method="POST">
-<entry kind="digits" var="zip">
-<prompt>Number Plate</prompt>
-</entry>
-</form>
-</page>';
+} else if ($path == 'Numberplate.php') {
+  
+   
     
 } else if ($path == 'IDNumber.xml') {
+if (isset($_POST['numberplate'])) {
+    $numberplate =$_POST['numberplate'];
+    }
     $page = '<page> 
 Input 
 <form action="/tkl/ussd/Payplan.xml" method="POST">
-<entry kind="digits" var="zip">
-<prompt>Your ID Number</prompt>
+<entry kind="digits" var="idnumber">
+<prompt>Your ID Number:'+$numberplate+':</prompt>
 </entry>
 </form>
 </page>';
    
 } else if ($path == 'Payplan.xml') {
     $page = '<page> 
+
+<entry kind="digits" var="payplan">
 Choose a payment plane below
 <a href="Daily.xml">Daily </a>
 <a href="Weekly.xml">Weekly</a>
@@ -59,6 +58,7 @@ Choose a payment plane below
     
 } else if ($path == 'Daily.xml') {
     $page = '<page> 
+<entry kind="digits" var="daily">
 Do you wish to pay with the current number?
 <a href="Pay.xml">Yes </a>
 <a href="newNumber.xml">No </a>
@@ -66,6 +66,7 @@ Do you wish to pay with the current number?
  
 } else if ($path == 'Weekly.xml') {
     $page = '<page> 
+    <entry kind="digits" var="weekly">
 Do you wish to pay with the current number?
 <a href="Pay.xml">Yes </a>
 <a href="newNumber.xml">No </a>
@@ -73,6 +74,7 @@ Do you wish to pay with the current number?
    
 } else if ($path == 'Monthly.xml') {
     $page = '<page> 
+    <entry kind="digits" var="monthly">
 Do you wish to pay with the current number?
 <a href="Pay.xml">Yes </a>
 <a href="newNumber.xml">No </a>
@@ -80,6 +82,8 @@ Do you wish to pay with the current number?
  
 } else if ($path == 'newNumber.xml') {
     $page = '<page> 
+<entry kind="digits" var="newnum">
+
 Pay Tax
 <a href="Pay.xml">Input the number to pay </a>
 
@@ -87,6 +91,8 @@ Pay Tax
    
 } else if ($path == 'Pay.xml') {
     $page = '<page> 
+   
+
 Mpesa STK Push
 
 
@@ -96,7 +102,6 @@ Mpesa STK Push
 
 echo $page;
 
-
-$telkomFooter = '</pages>';
+    $telkomFooter = '</pages>';
 echo $telkomFooter;
 ?>
