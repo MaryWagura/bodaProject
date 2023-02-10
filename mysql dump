@@ -1,0 +1,13 @@
+from db to machine
+
+mysqldump -u root -p boda </home/mwagura/boda.sql
+
+
+
+from machine to db 
+mysql -u root -p boda < /home/mwagura/boda.sql
+
+
+//change column
+ ALTER TABLE ownerdetails Modify column idnumber varchar(255);  
+
