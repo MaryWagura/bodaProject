@@ -23,7 +23,7 @@ if(isset($_GET['number']))
   // echo $nplate1;
   }
 $page= '<page> 
-MPESA stk Push
+Pay stk Push
 </page>';
 echo $page;
 $telkomFooter = '</pages>';

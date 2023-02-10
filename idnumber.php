@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) == 1) {
 Input 
 <form action="/tkl/ussd/Payplan.php">
 <entry kind="digits" var="idnumber">
-<prompt>Your ID Number ' . $numberplate . ':</prompt>
+<prompt>Your ID Number '.$numberplate.':</prompt>
 </entry>
 </form>
 </page>';
@@ -45,7 +45,12 @@ Input
     echo $telkomFooter;
 } else {
     $page = '<page> 
-The numberplate does not exist.Please try again
+The numberplate does not exist.
+<form action="/tkl/ussd/idnumber.php">
+<entry kind="digits" var="numberplate">
+<prompt>Please try again</prompt>
+</entry>
+</form>
 </page>';
 echo $page;
 
