@@ -23,7 +23,8 @@ $page= '';
 if ($path == '') {
     $page = '<page> 
 Welcome to BodaBoda Tax Services<br/>
-<a href="ussd/Numberplate.php">Pay Taxes</a><br/>
+<a href="ussd/Numberplate.php">Register</a><br/>
+<a href="ussd/enterID.php">Pay Tax</a><br/>
 <a href="Compliance.xml">Compliance Certiticate</a><br/>
 </page>';
 

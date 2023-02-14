@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) == 1) {
 Input 
 <form action="/tkl/ussd/Payplan.php">
 <entry kind="digits" var="idnumber">
-<prompt>Your ID Number '.$numberplate.':</prompt>
+<prompt>Your ID Number for the numberplate:'.$numberplate.':</prompt>
 </entry>
 </form>
 </page>';
@@ -57,5 +57,8 @@ echo $page;
 $telkomFooter = '</pages>';
 echo $telkomFooter;
 }
+
+
+
 
 ?>
